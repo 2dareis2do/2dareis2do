@@ -1,4 +1,4 @@
 # Directories with packages managed by composer.
-./vendor
+/vendor
 
 .DS_Store

@@ -8,6 +8,8 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
 /**
  * Implements hook_help().
  */
@@ -16,42 +18,22 @@ function virtual_edit_link_field_help($route_name, RouteMatchInterface $route_ma
     // Main module help for the virtual_edit_link_field module.
     case 'help.page.virtual_edit_link_field':
       $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Creates a virtual edit link field. This contains a virtual link that is useful for linking from a decoupled system or app.') . '</p>';
+      $output .= '<h3>' . new TranslatableMarkup('About') . '</h3>';
+      $output .= '<p>' . new TranslatableMarkup('Creates a virtual edit link field. This contains a virtual link that is useful for linking from a decoupled system or app.') . '</p>';
       return $output;
 
     default:
   }
 }
 
-// function virtual_edit_link_field_views_data()
-// {
-
-//   $data['commandes_entity'] = array(
-
-//       'totalCommandeTTC' => array(
-//           'title' => t('Total Commande TTC'),
-//           'help' => t("Le total TTC des commandes"),
-//           'field' => array(
-//               'id' => 'totalCommandeTTC',
-//           ),
-
-
-//       ),
-
-//   );
-
-// return $data;
-// }
-
 /**
  * Implements hook_entity_base_field_info_alter().
  */
 function virtual_edit_link_field_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
   if ($entity_type->id() === "node") {
-    $fields['my_computed_field'] = BaseFieldDefinition::create('string')
-      ->setName('my_computed_field')
-      ->setLabel(t('My computed field'))
+    $fields['editLink'] = BaseFieldDefinition::create('string')
+      ->setName('Virtual Edit Link Field')
+      ->setLabel(new TranslatableMarkup('Edit Link'))
       ->setComputed(TRUE)
       ->setClass('\Drupal\virtual_edit_link_field\ComputedField');
   }

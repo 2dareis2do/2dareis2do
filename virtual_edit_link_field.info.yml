@@ -1,5 +1,5 @@
 name: 'Virtual Edit Link Field'
 type: module
-description: 'Creates a virtual edit link field. This contains a virtual link that is useful for linking from a decoupled system or app.'
+description: 'Creates a virtual or computed edit link field.'
 core: 8.x
 package: 'Custom'

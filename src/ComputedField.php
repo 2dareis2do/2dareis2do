@@ -13,8 +13,7 @@ class ComputedField extends FieldItemList implements FieldItemListInterface {
   /**
    * Compute the values.
    */
-  protected function computeValue(){
-    
+  protected function computeValue() {
     $edit_node_id = $this->parent->getEntity()->id();
     $edit_entity_type_bundle = $this->parent->getEntity()->getEntityTypeId();
     $edit_base_url = \Drupal::request()->getSchemeAndHttpHost();
