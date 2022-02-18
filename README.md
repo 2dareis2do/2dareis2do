@@ -1,7 +1,7 @@
 # Virtual Edit Link Field
 
 When working in a de-coupled environment it might be useful to output a Drupal
-entitie's edit link as part of a RESTful implementation (such as when usimg 
+entity's edit link as part of a RESTful implementation (such as when using 
 Drupal's core JSON API that comes preinstalled on Drupal Distro such as 
 contenta).
 
