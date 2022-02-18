@@ -13,5 +13,17 @@ composer as is recommended by Drupal.
 ## Usage
 
 There is pretty much no config required. Once enabled you should see the 
-virtual_edit_link_field output with all other fields that are exposed to the 
-REST API and other modules.
+virtual `editLink` field output in the attributes array along with all other 
+fields that are exposed to the REST API and other modules.
+
+e.g.
+
+```  "attributes": {
+                "internalId": 3,
+                "isPublished": true,
+                "title": "The umami guide to our favorite mushrooms",
+                "createdAt": "2022-02-17T01:34:43+0100",
+                "updatedAt": "2022-02-17T19:31:05+0100",
+                "isPromoted": true,
+                "path": "/articles/the-umami-guide-to-our-favourite-mushrooms",
+                "editLink": "http://drupal.docker.localhost/node/3/edit/",```
