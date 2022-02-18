@@ -1,0 +1,29 @@
+<?php
+
+namespace Drupal\virtual_edit_link_field;
+
+use Drupal\Core\Field\FieldItemList;
+use Drupal\Core\Field\FieldItemListInterface;
+
+use Drupal\Core\Cache\CacheableDependencyInterface;
+use Drupal\Core\TypedData\DataDefinitionInterface;
+use Drupal\Core\TypedData\TypedDataInterface;
+use Drupal\Core\TypedData\TypedData;
+use Drupal\filter\FilterProcessResult;
+use Drupal\filter\Render\FilteredMarkup;
+
+class ComputedField extends FieldItemList implements FieldItemListInterface {
+
+  use ComputedItemListTrait;
+  
+  /**
+   * Compute the values.
+   */
+  protected function computeValue(){
+    $some_calculated_values = [1,2,3];
+    foreach($some_calculated_values as $delta => $value){
+      $this->list[$delta] = $this->createItem($delta, $value);
+    }
+  }
+  
+}

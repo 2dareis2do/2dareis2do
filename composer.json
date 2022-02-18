@@ -1,0 +1,13 @@
+{
+    "name": "2dareis2do/virtual_edit_link_field",
+    "type": "drupal-module",
+    "description": "Creates a virtual edit link field. This contains a virtual link that is useful for linking from a decoupled system or app.",
+    "keywords": [
+    ],
+    "homepage": "https://github.com/2dareis2do/virtual_edit_link_field",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://github.com/2dareis2do/virtual_edit_link_field",
+        "source": "https://github.com/2dareis2do/virtual_edit_link_field"
+    }
+}
