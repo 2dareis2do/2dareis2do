@@ -21,9 +21,9 @@ class ComputedField extends FieldItemList implements FieldItemListInterface {
     $admin = User::load(1);
     $nowtime = time();
     $last_login_date = (int) $admin->getLastAccessedTime();
-    $delta = $nowtime - $last_login_date;
+    $last_logged_in = $nowtime - $last_login_date;
 
-    if ($admin->isAuthenticated() && $admin->hasPermission('First level permission') && $delta <= (60 * 60)) {
+    if ($admin->isAuthenticated() && $admin->hasPermission('First level permission') && $last_logged_in <= (60 * 60)) {
       $edit_node_id = $this->parent->getEntity()->id();
       $edit_entity_type_bundle = $this->parent->getEntity()->getEntityTypeId();
       $edit_base_url = \Drupal::request()->getSchemeAndHttpHost();
