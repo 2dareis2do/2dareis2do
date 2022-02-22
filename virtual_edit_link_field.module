@@ -1,5 +1,8 @@
 <?php
 
+// namespace Drupal\virtual_edit_link_field;
+
+
 /**
  * @file
  * Contains virtual_edit_link_field.module.
@@ -30,11 +33,13 @@ function virtual_edit_link_field_help($route_name, RouteMatchInterface $route_ma
  * Implements hook_entity_base_field_info_alter().
  */
 function virtual_edit_link_field_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
-  if ($entity_type->id() === "node") {
+
+  if ($entity_type->id() === "node" ) {
     $fields['editLink'] = BaseFieldDefinition::create('string')
       ->setName('Virtual Edit Link Field')
       ->setLabel(new TranslatableMarkup('Edit Link'))
       ->setComputed(TRUE)
       ->setClass('\Drupal\virtual_edit_link_field\ComputedField');
   }
+
 }

@@ -1,0 +1,3 @@
+static permission 1:
+  title: 'First level permission'
+  description: 'Gives static permission 1 to the users.'
