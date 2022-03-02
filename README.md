@@ -26,4 +26,4 @@ e.g.
                 "updatedAt": "2022-02-17T19:31:05+0100",
                 "isPromoted": true,
                 "path": "/articles/the-umami-guide-to-our-favourite-mushrooms",
-                "editLink": "http://drupal.docker.localhost/node/3/edit/",```
+                "editLink": "http://drupal.docker.localhost/node/3/edit",```
