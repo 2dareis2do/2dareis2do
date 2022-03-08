@@ -7,6 +7,7 @@ use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\TypedData\ComputedItemListTrait;
 use Drupal\user\Entity\User;
 
+
 class ComputedField extends FieldItemList implements FieldItemListInterface {
 
   use ComputedItemListTrait;
@@ -26,7 +27,7 @@ class ComputedField extends FieldItemList implements FieldItemListInterface {
         'absolute' => TRUE,
         'language' => \Drupal::languageManager()->getCurrentLanguage(),
       ];
-      $edit_node = $this->parent->getEntity();
+      $edit_node = $this->getEntity();
       $editurl = $edit_node->toUrl('edit-form', $options)->toString();
       $this->list[0] = $this->createItem(0, $editurl);
     }
