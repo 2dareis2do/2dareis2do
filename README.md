@@ -16,6 +16,8 @@ There is pretty much no config required. Once enabled you should see the
 virtual `editLink` field output in the attributes array along with all other 
 fields that are exposed to the REST API and other modules.
 
+Timeout is currently set to 1 day (60s x 60 x 24).
+
 e.g.
 
 ```  "attributes": {
@@ -27,3 +29,5 @@ e.g.
                 "isPromoted": true,
                 "path": "/articles/the-umami-guide-to-our-favourite-mushrooms",
                 "editLink": "http://drupal.docker.localhost/node/3/edit",```
+
+Viewing the edit link or not may also be dependent on the caching policy
