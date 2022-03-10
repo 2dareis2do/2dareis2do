@@ -39,7 +39,10 @@ function virtual_edit_link_field_entity_base_field_info_alter(&$fields, EntityTy
       ->setLabel(t('Edit Link'))
       ->setTargetEntityTypeId('node') // required for content translation
       ->setComputed(TRUE)
-      ->setClass('\Drupal\virtual_edit_link_field\ComputedField');
+      ->setClass('\Drupal\virtual_edit_link_field\ComputedField')
+      ->setReadOnly(TRUE)
+      ->setRevisionable(TRUE)
+      ->setTranslatable(TRUE);
   }
 
 }
