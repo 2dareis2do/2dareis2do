@@ -20,7 +20,7 @@ Timeout is currently set to 1 day (60s x 60 x 24).
 
 e.g.
 
-```  "attributes": {
+``  "attributes": {
                 "internalId": 3,
                 "isPublished": true,
                 "title": "The umami guide to our favorite mushrooms",
@@ -28,8 +28,11 @@ e.g.
                 "updatedAt": "2022-02-17T19:31:05+0100",
                 "isPromoted": true,
                 "path": "/articles/the-umami-guide-to-our-favourite-mushrooms",
-                "editLink": "http://drupal.docker.localhost/node/3/edit",```
+                "editLink": "http://drupal.docker.localhost/node/3/edit",``
 
 ## Todo 
 
-Tests
+- Tests for different scenarios 
+  - i.e. accessing pages via api / page
+  - check not being able to access after logging out etc.
+- Make timeout configurable

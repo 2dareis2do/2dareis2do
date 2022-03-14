@@ -20,7 +20,7 @@ class ComputedField extends FieldItemList implements FieldItemListInterface {
 
     $now_timestamp = time();
 
-    // lets check if admin user has logged in in the last day
+    // lets check if admin user has logged in in the last day or so
     // access requires login. Could be just an open browser tab
     $last_accessed_date_timestamp = (int) $admin->getLastAccessedTime();
     $secs_since_last_accessed = $now_timestamp - $last_accessed_date_timestamp;
