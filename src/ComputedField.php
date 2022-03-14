@@ -6,8 +6,6 @@ use Drupal\Core\Field\FieldItemList;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\TypedData\ComputedItemListTrait;
 use Drupal\user\Entity\User;
-use Drupal\Core\Render\BubbleableMetadata;
-
 
 class ComputedField extends FieldItemList implements FieldItemListInterface {
 
@@ -32,15 +30,8 @@ class ComputedField extends FieldItemList implements FieldItemListInterface {
         'absolute' => TRUE,
         'language' => \Drupal::languageManager()->getCurrentLanguage(),
       ];
-
-      $edit_node = $this->getEntity();
       
-      // overide the cache max tag as this as is set to perm (-1) by default
-      $bubbleable_metadata = new BubbleableMetadata();
-      $bubbleable_metadata->addCacheTags(['node:'.$edit_node->id()]);
-      $bubbleable_metadata->setCacheMaxAge(0);
-
-      $editurl = $edit_node->toUrl('edit-form', $options)->toString();
+      $editurl = $this->getEntity()->toUrl('edit-form', $options)->toString();
       $this->list[0] = $this->createItem(0, $editurl);
     }
   }

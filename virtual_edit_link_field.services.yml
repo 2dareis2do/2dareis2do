@@ -1,0 +1,6 @@
+services:
+  virtual_edit_link_field.setexpires:
+    class: Drupal\virtual_edit_link_field\EventSubscriber\SetExpiresSubscriber
+    tags:
+      - { name: event_subscriber }
+    arguments: ['@cache_tags.invalidator']
