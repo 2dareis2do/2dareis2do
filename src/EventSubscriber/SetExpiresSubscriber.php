@@ -19,9 +19,9 @@ class SetExpiresSubscriber implements EventSubscriberInterface {
    */
   public function onResponse(FilterResponseEvent $event) {
     $request = $event->getRequest();
-    $string = "/api/articles";
+    $string = "/api";
     $current = $request->getRequestUri();
-    if (strpos($current, $string) !== false && $event->isMasterRequest()) { 
+    if (strpos($current, $string) !== false) { 
       $tags = $event->getResponse()->getCacheableMetadata()->getCacheTags();
       $this->invalidator->invalidateTags($tags);
     }
